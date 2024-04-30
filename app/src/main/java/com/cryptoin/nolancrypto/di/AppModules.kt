@@ -76,6 +76,7 @@ object AppModules {
         viewModel { MainViewModel(get()) }
         viewModelOf(::ProfileViewModel)
         viewModelOf(::LoginViewModel)
+        viewModelOf(::RegisterViewModel)
     }
 
     val modules = listOf(
