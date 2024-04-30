@@ -2,8 +2,26 @@
     <string name="app_name">NolanCrypto</string>
     <string name="title_tab_profile">Profile</string>
     <string name="title_tab_home">Home</string>
+    <string name="login">login</string>
+    <string name="text_not_registered_yet_register_here">Not registered yet ? Register Here</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="header_profile">Profile</string>
+    <string name="hint_name">Nama</string>
+    <string name="text_name">Nama lengkap</string>
+    <string name="text_hint_username">Username</string>
+    <string name="text_username">Username</string>
+    <string name="text_hint_email">Email</string>
+    <string name="text_email">loremipsum@gmail.com</string>
+    <string name="text_edit_text_password">12345678</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="success_to_change">Success to Change</string>
+    <string name="update_username_failed">Update Username Failed : %1$s</string>
+    <string name="text_logout">Logout</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_desc">Make your invest today\n</string>
     <string name="text_desc_banner">with minimal risk</string>
-    <string name="text_name">Welcome Again Giorgo</string>
+    <string name="text_name_banner">Welcome Again Giorgo</string>
     <string name="text_list">Trending Coins</string>
 </resources>
