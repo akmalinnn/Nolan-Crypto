@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.ksp)
     id("kotlin-parcelize")
     alias(libs.plugins.ktlint)
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 
 }
 
@@ -76,6 +78,8 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.room.ktx)
     implementation(libs.androidx.annotation)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.auth)
     ksp(libs.room.compiler)
     implementation(libs.coroutine.core)
     implementation(libs.coroutine.android)

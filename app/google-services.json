@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "848070482783",
+    "project_id": "nolancrypto-ae6fd",
+    "storage_bucket": "nolancrypto-ae6fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848070482783:android:d28caf4a64d01af002b4ea",
+        "android_client_info": {
+          "package_name": "com.cryptoin.nolancrypto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDR8Ox7xiy7Laz8nfbltEG7OO77f5pwVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
