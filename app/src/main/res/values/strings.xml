@@ -20,4 +20,8 @@
     <string name="update_username_failed">Update Username Failed : %1$s</string>
     <string name="text_logout">Logout</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_desc">Make your invest today\n</string>
+    <string name="text_desc_banner">with minimal risk</string>
+    <string name="text_name_banner">Welcome Again Giorgo</string>
+    <string name="text_list">Trending Coins</string>
 </resources>

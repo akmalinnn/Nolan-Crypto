@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import com.cryptoin.nolancrypto.R
 import com.cryptoin.nolancrypto.data.model.Coin
 import com.cryptoin.nolancrypto.databinding.ItemCoinBinding
 import com.cryptoin.nolancrypto.utils.toDollarFormat
@@ -58,6 +60,10 @@ class CoinListAdapter(private val itemClick: (Coin) -> Unit) :
                 binding.tvCoin.text = item.name
                 binding.tvSymbol.text = item.symbol
                 binding.tvPrice.text = item.currentPrice.toDollarFormat()
+                binding.ivCoin.load(this.image) {
+                    crossfade(true)
+                    error(R.mipmap.ic_launcher)
+                }
                 itemView.setOnClickListener { itemClick(this) }
             }
         }
