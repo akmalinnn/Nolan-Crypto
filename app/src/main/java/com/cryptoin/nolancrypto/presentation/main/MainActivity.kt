@@ -1,25 +1,22 @@
 package com.cryptoin.nolancrypto.presentation.main
 
 
+import android.content.Intent
 import android.os.Bundle
-
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.cryptoin.nolancrypto.R
 import com.cryptoin.nolancrypto.databinding.ActivityMainBinding
+import com.cryptoin.nolancrypto.presentation.login.LoginActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
-
-    private val isLogin = false
-
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
                 R.id.menu_tab_profile -> {
-                    if (!isLogin) {
-//                        navigateToLogin()
+                    if (!viewModel.isLoggedIn()) {
+                        navigateToLogin()
                         controller.popBackStack(R.id.menu_tab_home, false)
                     }
                 }
@@ -42,9 +39,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    private fun navigateToLogin() {
-//        startActivity(Intent(this, LoginActivity::class.java))
-//    }
+    private fun navigateToLogin() {
+        startActivity(Intent(this, LoginActivity::class.java))
+    }
 
 //    fun navigateToTabProfile() {
 //        val navController = findNavController(R.id.nav_host_fragment_activity_main)
