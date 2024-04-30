@@ -110,7 +110,6 @@ class ProfileFragment : Fragment() {
         viewModel.isEditMode.observe(viewLifecycleOwner) {
             binding.emailEditText.isVisible = false
             binding.nameEditText.isEnabled = it
-            binding.usernameEditText.isVisible = false
             binding.passwordEditText.isVisible = false
         }
     }
