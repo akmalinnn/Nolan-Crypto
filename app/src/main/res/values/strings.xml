@@ -2,4 +2,8 @@
     <string name="app_name">NolanCrypto</string>
     <string name="title_tab_profile">Profile</string>
     <string name="title_tab_home">Home</string>
+    <string name="title_desc">Make your invest today\n</string>
+    <string name="text_desc_banner">with minimal risk</string>
+    <string name="text_name">Welcome Again Giorgo</string>
+    <string name="text_list">Trending Coins</string>
 </resources>
