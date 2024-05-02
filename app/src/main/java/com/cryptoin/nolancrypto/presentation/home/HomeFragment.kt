@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
+import com.cryptoin.nolancrypto.R
 import com.cryptoin.nolancrypto.data.model.Coin
 import com.cryptoin.nolancrypto.databinding.FragmentHomeBinding
 import com.cryptoin.nolancrypto.presentation.coindetail.DetailCoinActivity
@@ -40,6 +41,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupListProduct()
         getCoinData()
+        loadProfileData()
     }
 
 
@@ -64,12 +66,22 @@ class HomeFragment : Fragment() {
 
 
 
+    private fun loadProfileData() {
+        if (homeViewModel.isLoggedIn()) {
+            homeViewModel.getCurrentUser()?.let { user ->
+                binding.layoutHeader.layoutBanner.tvProfileName.text = getString(R.string.text_name_greetings, user.fullName)
+            }
+        } else {
+            binding.layoutHeader.layoutBanner.tvProfileName.text  = getString(R.string.text_name_banner)
+        }
+    }
+
     private fun bindProductList(data: List<Coin>) {
         productAdapter.submitData(data)
     }
 
 //    private fun navigateToProfile() {
-//        if (requireActivity() !is MainActivity) return
-//        (requireActivity() as MainActivity).navigateToTabProfile()
-//    }
+////        if (requireActivity() !is MainActivity) return
+////        (requireActivity() as MainActivity).navigateToTabProfile()
+////    }
 }

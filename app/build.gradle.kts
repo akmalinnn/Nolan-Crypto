@@ -9,6 +9,7 @@ plugins {
 
 }
 
+
 android {
     namespace = "com.cryptoin.nolancrypto"
     compileSdk = 34
@@ -43,6 +44,8 @@ android {
         viewBinding = true
         buildConfig = true
     }
+
+
     flavorDimensions += "env"
     productFlavors {
         create("production") {
@@ -60,6 +63,7 @@ android {
             )
         }
     }
+
 }
 
 dependencies {
@@ -80,6 +84,7 @@ dependencies {
     implementation(libs.androidx.annotation)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.auth.ktx)
     ksp(libs.room.compiler)
     implementation(libs.coroutine.core)
     implementation(libs.coroutine.android)
@@ -87,6 +92,7 @@ dependencies {
     implementation(libs.retrofit.gson)
     implementation(libs.okhttp)
     implementation(libs.koin.android)
+    implementation(libs.appIntro)
 
 
     testImplementation(libs.junit)
