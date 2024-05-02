@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:layout_margin="4dp"
+    android:layout_margin="6dp"
     app:cardCornerRadius="30dp"
     app:elevation="4dp">
 
@@ -34,7 +34,7 @@
                 android:maxLines="1"
                 android:text="@string/text_name_banner"
                 android:textColor="@android:color/white"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

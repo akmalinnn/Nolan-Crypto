@@ -43,8 +43,6 @@ object AppModules {
     }
 
     private val localModule = module {
-//        single<AppDatabase> { AppDatabase.createInstance(androidContext()) }
-//        single<CartDao> { get<AppDatabase>().cartDao() }
         single<SharedPreferences> {
             com.cryptoin.nolancrypto.utils.SharedPreferenceUtils.createPreference(
                 androidContext(),

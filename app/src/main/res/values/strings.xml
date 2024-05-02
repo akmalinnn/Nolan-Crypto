@@ -31,6 +31,12 @@
     <string name="text_error_password_less_than_8_char">Password less than 8 character</string>
     <string name="title_desc">Make your invest today\n</string>
     <string name="text_desc_banner">with minimal risk</string>
-    <string name="text_name_banner">Welcome Again Giorgo</string>
+    <string name="text_name_banner">Welcome Again 👋</string>
+    <string name="text_name_greetings">Welcome Again %s 👋</string>
+
     <string name="text_list">Trending Coins</string>
+    <string name="estimated_asset_value">NolanCrypto</string>
+    <string name="intro_one">Welcome to NolanCrypto, your gateway to the future of finance.</string>
+    <string name="intro_two">Step into the world of digital assets with NolanCrypto, where security meets simplicity.</string>
+    <string name="intro_three">Unlock the power of blockchain technology with NolanCrypto, your trusted companion in the realm of cryptocurrencies.</string>
 </resources>
