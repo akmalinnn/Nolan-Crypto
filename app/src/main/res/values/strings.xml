@@ -33,4 +33,5 @@
     <string name="text_desc_banner">with minimal risk</string>
     <string name="text_name_banner">Welcome Again Giorgo</string>
     <string name="text_list">Trending Coins</string>
+    <string name="market_unavailable_message">market under maintenance</string>
 </resources>
