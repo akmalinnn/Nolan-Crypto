@@ -10,12 +10,22 @@
         android:layout_height="wrap_content"
         tools:context=".presentation.home.Fragment">
 
-
         <include
             android:id="@+id/layout_header"
             layout="@layout/layout_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <include
+            android:id="@+id/layout_search"
+            layout="@layout/layout_home_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/layout_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
 
         <TextView
             android:id="@+id/tv_list_menu"
@@ -25,15 +35,51 @@
             android:layout_marginVertical="16dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="@string/text_list"
+            android:text="TOP"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_header" />
+            app:layout_constraintTop_toBottomOf="@id/layout_tools" />
 
+        <include
+            android:id="@+id/layout_fav"
+            layout="@layout/layout_fav"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_list_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <include
+            android:id="@+id/layout_tools"
+            layout="@layout/layout_category"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/layout_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+
+        <TextView
+            android:id="@+id/tv_list_menu_coin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginVertical="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Trending coin"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_fav" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_item"
@@ -43,9 +89,8 @@
             android:layout_marginVertical="16dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tv_list_menu_coin"
             app:layout_constraintBottom_toBottomOf="parent"
-
-            app:layout_constraintTop_toBottomOf="@+id/tv_list_menu"
             tools:listitem="@layout/item_coin" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
