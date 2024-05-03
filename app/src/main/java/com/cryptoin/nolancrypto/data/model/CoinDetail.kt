@@ -4,11 +4,12 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class CoinDetail (
+data class CoinDetail(
     var id: String,
     var symbol: String,
     var name: String,
     var image: String,
-    var currentPrice: String,
+    var currentPrice: Double,
     var description: String,
-): Parcelable
+    var webSlug: String,
+) : Parcelable

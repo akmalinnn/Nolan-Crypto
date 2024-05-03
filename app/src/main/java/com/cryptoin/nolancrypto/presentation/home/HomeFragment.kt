@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.cryptoin.nolancrypto.R
 import com.cryptoin.nolancrypto.data.model.Coin
@@ -16,35 +15,35 @@ import com.cryptoin.nolancrypto.utils.proceedWhen
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
-
     private lateinit var binding: FragmentHomeBinding
 
     private val homeViewModel: HomeViewModel by viewModel()
-    
 
     private val productAdapter: CoinListAdapter by lazy {
         CoinListAdapter {
-            DetailCoinActivity.startActivity(requireContext(), it )
+            DetailCoinActivity.startActivity(requireContext(), it.id)
         }
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?,
+    ) {
         super.onViewCreated(view, savedInstanceState)
         setupListProduct()
         getCoinData()
         loadProfileData()
     }
-
-
 
     private fun setupListProduct() {
         val itemDecoration = GridSpacingItemDecoration(1, 12, true)
@@ -59,12 +58,10 @@ class HomeFragment : Fragment() {
             it.proceedWhen(
                 doOnSuccess = {
                     it.payload?.let { data -> bindProductList(data) }
-                }
+                },
             )
         }
     }
-
-
 
     private fun loadProfileData() {
         if (homeViewModel.isLoggedIn()) {
@@ -75,6 +72,7 @@ class HomeFragment : Fragment() {
             binding.layoutHeader.layoutBanner.tvProfileName.text  = getString(R.string.text_name_banner)
         }
     }
+
 
     private fun bindProductList(data: List<Coin>) {
         productAdapter.submitData(data)

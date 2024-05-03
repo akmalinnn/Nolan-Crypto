@@ -33,8 +33,9 @@
     <string name="text_desc_banner">with minimal risk</string>
     <string name="text_name_banner">Welcome Again 👋</string>
     <string name="text_name_greetings">Welcome Again %s 👋</string>
-
     <string name="text_list">Trending Coins</string>
+    <string name="text_open_in_coingecko">Open in CoinGecko</string>
+    <string name="text_data_not_available">Data not Available</string>
     <string name="estimated_asset_value">NolanCrypto</string>
     <string name="intro_one">Welcome to NolanCrypto, your gateway to the future of finance.</string>
     <string name="intro_two">Step into the world of digital assets with NolanCrypto, where security meets simplicity.</string>

@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
             doRegister()
         }
-        binding.tvNavToLogin.highLightWord("Login Here"){
+        binding.tvNavToLogin.highLightWord("Login Here") {
             navigateToLogin()
         }
     }
@@ -107,9 +107,9 @@ class RegisterActivity : AppCompatActivity() {
         val email = binding.layoutForm.etEmail.text.toString().trim()
 
         return checkNameValidation(fullName) && checkEmailValidation(email) &&
-                checkPasswordValidation(password, binding.layoutForm.tilPassword) &&
-                checkPasswordValidation(confirmPassword, binding.layoutForm.tilConfirmPassword) &&
-                checkPwdAndConfirmPwd(password, confirmPassword)
+            checkPasswordValidation(password, binding.layoutForm.tilPassword) &&
+            checkPasswordValidation(confirmPassword, binding.layoutForm.tilConfirmPassword) &&
+            checkPwdAndConfirmPwd(password, confirmPassword)
     }
 
     private fun checkNameValidation(fullName: String): Boolean {
