@@ -99,7 +99,7 @@ class DetailCoinActivity : AppCompatActivity() {
                 crossfade(true)
             }
             itemCoinBinding.tvProductName.text = item.name
-            binding.tvProductDesc.text = item.symbol
+            binding.tvProductDesc.text = item.description
             itemCoinBinding.tvCurrentPrice.text = item.currentPrice.toDollarFormat()
         }
     }

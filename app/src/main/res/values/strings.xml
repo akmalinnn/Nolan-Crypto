@@ -40,4 +40,9 @@
     <string name="intro_one">Welcome to NolanCrypto, your gateway to the future of finance.</string>
     <string name="intro_two">Step into the world of digital assets with NolanCrypto, where security meets simplicity.</string>
     <string name="intro_three">Unlock the power of blockchain technology with NolanCrypto, your trusted companion in the realm of cryptocurrencies.</string>
+    <string name="top">TOP</string>
+    <string name="btc_usd">BTC/USD</string>
+    <string name="eth_usd">ETH/USD</string>
+    <string name="bnb_idr">BNB/IDR</string>
+    <string name="percent">%</string>
 </resources>

@@ -15,7 +15,6 @@ import com.cryptoin.nolancrypto.data.repository.ProductRepository
 import com.cryptoin.nolancrypto.data.repository.ProductRepositoryImpl
 import com.cryptoin.nolancrypto.data.repository.UserRepository
 import com.cryptoin.nolancrypto.data.repository.UserRepositoryImpl
-import com.cryptoin.nolancrypto.data.source.local.pref.UserPreference
 import com.cryptoin.nolancrypto.data.source.local.pref.UserPreferenceImpl
 import com.cryptoin.nolancrypto.data.source.network.services.NolanCryptoApiService
 import com.cryptoin.nolancrypto.data.source.network.services.firebase.FirebaseService
@@ -44,20 +43,24 @@ object AppModules {
             single<FirebaseService> { FirebaseServiceImpl() }
         }
 
-    private val localModule = module {
-        single<SharedPreferences> {
-            com.cryptoin.nolancrypto.utils.SharedPreferenceUtils.createPreference(
-                androidContext(),
-                UserPreferenceImpl.PREF_NAME
-            )
+    private val localModule =
+        module {
+            single<SharedPreferences> {
+                com.cryptoin.nolancrypto.utils.SharedPreferenceUtils.createPreference(
+                    androidContext(),
+                    UserPreferenceImpl.PREF_NAME,
+                )
+            }
         }
-        
+
     private val datasource =
         module {
             single<CoinDataSource> { CoinApiDataSource(get()) }
             single<CoinDetailDataSource> { CoinDetailApiDataSource(get()) }
             single<UserDataSource> { UserPreferenceDataSource(get()) }
-            single<AuthDataSource> { FirebaseAuthDataSource(get()) 
+            single<AuthDataSource> {
+                FirebaseAuthDataSource(get())
+            }
         }
 
     private val repository =

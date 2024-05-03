@@ -7,7 +7,10 @@ object SharedPreferenceUtils {
     private const val PREF_NAME = "MyPrefs"
     private const val PREF_FIRST_RUN = "isFirstRun"
 
-    fun createPreference(context: Context, name: String): SharedPreferences {
+    fun createPreference(
+        context: Context,
+        name: String,
+    ): SharedPreferences {
         return context.getSharedPreferences(name, Context.MODE_PRIVATE)
     }
 
@@ -17,7 +20,10 @@ object SharedPreferenceUtils {
         editor.apply()
     }
 
-    operator fun SharedPreferences.set(key: String, value: Any?) {
+    operator fun SharedPreferences.set(
+        key: String,
+        value: Any?,
+    ) {
         when (value) {
             is String? -> edit { it.putString(key, value) }
             is Int -> edit { it.putInt(key, value) }
@@ -31,18 +37,22 @@ object SharedPreferenceUtils {
 
     inline operator fun <reified T : Any> SharedPreferences.get(
         key: String,
-        defaultValue: T? = null
-    ): T = when (T::class) {
-        String::class -> getString(key, defaultValue as? String ?: "") as T
-        Int::class -> getInt(key, defaultValue as? Int ?: -1) as T
-        Boolean::class -> getBoolean(key, defaultValue as? Boolean ?: false) as T
-        Float::class -> getFloat(key, defaultValue as? Float ?: -1f) as T
-        Double::class -> getFloat(key, defaultValue as? Float ?: -1f).toDouble() as T
-        Long::class -> getLong(key, defaultValue as? Long ?: -1) as T
-        else -> throw UnsupportedOperationException("Not yet implemented")
-    }
+        defaultValue: T? = null,
+    ): T =
+        when (T::class) {
+            String::class -> getString(key, defaultValue as? String ?: "") as T
+            Int::class -> getInt(key, defaultValue as? Int ?: -1) as T
+            Boolean::class -> getBoolean(key, defaultValue as? Boolean ?: false) as T
+            Float::class -> getFloat(key, defaultValue as? Float ?: -1f) as T
+            Double::class -> getFloat(key, defaultValue as? Float ?: -1f).toDouble() as T
+            Long::class -> getLong(key, defaultValue as? Long ?: -1) as T
+            else -> throw UnsupportedOperationException("Not yet implemented")
+        }
 
-    fun setFirstRun(context: Context, isFirstRun: Boolean) {
+    fun setFirstRun(
+        context: Context,
+        isFirstRun: Boolean,
+    ) {
         val sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
         sharedPreferences.edit().putBoolean(PREF_FIRST_RUN, isFirstRun).apply()
     }

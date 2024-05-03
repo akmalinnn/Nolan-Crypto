@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         val isFirstRun = sharedPreferences.getBoolean("isFirstRun", true)
 
-        //delete negasi, Intro just showing at the first time run
+        // delete negasi, Intro just showing at the first time run
         if (!isFirstRun) {
             startActivity(Intent(this, MyAppIntroActivity::class.java))
             // Set isFirstRun to false to indicate that the app has been launched before
