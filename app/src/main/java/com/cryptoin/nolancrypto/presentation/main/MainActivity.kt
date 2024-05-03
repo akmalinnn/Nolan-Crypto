@@ -1,5 +1,6 @@
 package com.cryptoin.nolancrypto.presentation.main
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.cryptoin.nolancrypto.R
 import com.cryptoin.nolancrypto.databinding.ActivityMainBinding
+import com.cryptoin.nolancrypto.presentation.intro.MyAppIntroActivity
 import com.cryptoin.nolancrypto.presentation.login.LoginActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        checkFirstRun()
         setupBottomNav()
     }
 
@@ -47,4 +50,16 @@ class MainActivity : AppCompatActivity() {
 //        binding.navView.selectedItemId = R.id.menu_tab_profile
 //        navController.navigate(R.id.menu_tab_profile)
 //    }
+
+    private fun checkFirstRun() {
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val isFirstRun = sharedPreferences.getBoolean("isFirstRun", true)
+
+        //delete negasi, Intro just showing at the first time run
+        if (!isFirstRun) {
+            startActivity(Intent(this, MyAppIntroActivity::class.java))
+            // Set isFirstRun to false to indicate that the app has been launched before
+            sharedPreferences.edit().putBoolean("isFirstRun", false).apply()
+        }
+    }
 }

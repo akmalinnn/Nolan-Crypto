@@ -25,6 +25,8 @@
         <activity
             android:name=".presentation.coindetail.DetailCoinActivity"
             android:exported="false" />
+        <activity android:name=".presentation.intro.MyAppIntroActivity"
+            android:label="My Custom AppIntro" />
         <activity
             android:name=".presentation.main.MainActivity"
             android:exported="true">

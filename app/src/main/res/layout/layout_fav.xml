@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="981.21"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -73,8 +73,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="48.820"
-                android:textSize="24sp"
+                android:text="48.82"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -113,8 +113,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="16.347"
-                android:textSize="24sp"
+                android:text="16.34"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView

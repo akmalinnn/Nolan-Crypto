@@ -1,0 +1,14 @@
+<!-- img_banner_overlay.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Original image -->
+    <item android:drawable="@drawable/img_banner" />
+    <!-- Black gradient overlay -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#00000000"
+                android:endColor="#70000000"
+                android:angle="180"/>
+        </shape>
+    </item>
+</layer-list>

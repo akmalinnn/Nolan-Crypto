@@ -44,24 +44,20 @@ object AppModules {
             single<FirebaseService> { FirebaseServiceImpl() }
         }
 
-    private val localModule =
-        module {
-//        single<AppDatabase> { AppDatabase.createInstance(androidContext()) }
-//        single<CartDao> { get<AppDatabase>().cartDao() }
-            single<SharedPreferences> {
-                com.cryptoin.nolancrypto.utils.SharedPreferenceUtils.createPreference(
-                    androidContext(),
-                    UserPreferenceImpl.PREF_NAME,
-                )
-            }
-            single<UserPreference> { UserPreferenceImpl(get()) }
+    private val localModule = module {
+        single<SharedPreferences> {
+            com.cryptoin.nolancrypto.utils.SharedPreferenceUtils.createPreference(
+                androidContext(),
+                UserPreferenceImpl.PREF_NAME
+            )
         }
+        
     private val datasource =
         module {
             single<CoinDataSource> { CoinApiDataSource(get()) }
             single<CoinDetailDataSource> { CoinDetailApiDataSource(get()) }
             single<UserDataSource> { UserPreferenceDataSource(get()) }
-            single<AuthDataSource> { FirebaseAuthDataSource(get()) }
+            single<AuthDataSource> { FirebaseAuthDataSource(get()) 
         }
 
     private val repository =
