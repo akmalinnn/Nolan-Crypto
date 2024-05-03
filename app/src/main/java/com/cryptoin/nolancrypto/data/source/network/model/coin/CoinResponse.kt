@@ -13,4 +13,6 @@ data class CoinResponse(
     var image: String?,
     @SerializedName("current_price")
     var currentPrice: Double?,
+    @SerializedName("price_change_percentage_24h")
+    var percentChange: Double?,
 )

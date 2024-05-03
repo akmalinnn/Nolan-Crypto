@@ -10,6 +10,7 @@ fun CoinResponse.toCoin() =
         name = this.name.orEmpty(),
         image = this.image.orEmpty(),
         currentPrice = this.currentPrice ?: 0.0,
+        percentChange = this.percentChange ?: 0.0,
     )
 
 fun Collection<CoinResponse>.toCoins() =

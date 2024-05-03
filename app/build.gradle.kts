@@ -8,7 +8,6 @@ plugins {
     id("com.google.firebase.crashlytics")
 }
 
-
 android {
     namespace = "com.cryptoin.nolancrypto"
     compileSdk = 34
@@ -44,7 +43,6 @@ android {
         buildConfig = true
     }
 
-
     flavorDimensions += "env"
     productFlavors {
         create("production") {
@@ -72,7 +70,6 @@ android {
             )
         }
     }
-
 }
 
 tasks.getByPath("preBuild").dependsOn("ktlintFormat")

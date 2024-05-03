@@ -11,7 +11,6 @@ class HomeViewModel(
     private val productRepository: ProductRepository,
     private val userRepository: UserRepository,
 ) : ViewModel() {
-
     fun getCoins() = productRepository.getCoins().asLiveData(Dispatchers.IO)
 
     fun getCurrentUser(): User? {
