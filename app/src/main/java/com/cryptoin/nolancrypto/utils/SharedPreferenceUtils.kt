@@ -1,6 +1,5 @@
 package com.cryptoin.nolancrypto.utils
 
-
 import android.content.Context
 import android.content.SharedPreferences
 

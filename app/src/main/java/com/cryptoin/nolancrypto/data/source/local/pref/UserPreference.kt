@@ -5,6 +5,7 @@ import com.cryptoin.nolancrypto.utils.SharedPreferenceUtils.set
 
 interface UserPreference {
     fun isUsingDarkMode(): Boolean
+
     fun setUsingDarkMode(isUsingDarkMode: Boolean)
 }
 

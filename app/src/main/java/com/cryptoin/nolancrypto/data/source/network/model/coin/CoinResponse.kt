@@ -2,7 +2,6 @@ package com.cryptoin.nolancrypto.data.source.network.model.coin
 
 import com.google.gson.annotations.SerializedName
 
-
 data class CoinResponse(
     @SerializedName("id")
     var id: String?,
@@ -13,5 +12,5 @@ data class CoinResponse(
     @SerializedName("image")
     var image: String?,
     @SerializedName("current_price")
-    var currentPrice: Double?
+    var currentPrice: Double?,
 )
